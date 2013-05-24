@@ -1,0 +1,349 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+/*
+ #movies
+{
+font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+width:100%;
+border-collapse:collapse;
+}
+#movies td, #movies th 
+{
+font-size:1em;
+border:1px solid #98bf21;
+padding:3px 7px 2px 7px;
+}
+#movies th 
+{
+font-size:1.1em;
+text-align:left;
+padding-top:5px;
+padding-bottom:4px;
+background-color:#A7C942;
+color:#ffffff;
+}
+
+
+input, textarea {
+ padding: 8px;
+ border: solid 1px #E5E5E5;
+font: normal 12px Verdana, Tahoma, sans-serif;
+ width: 200px;
+
+ }
+
+textarea {
+ width: 400px;
+ max-width: 400px;
+ height: 150px;
+ line-height: 150%;
+ }
+
+.form label {
+ margin-left: 10px;
+ color: #999999;
+ }
+
+.submit input {
+ width: auto;
+ padding: 9px 15px;
+ background: #617798;
+ font-size: 14px;
+ color: #FFFFFF;
+ cursor:pointer;
+ }
+#form-div {
+background-color:#F5F5F5;
+padding:15px;
+}
+
+#wrapper {
+margin:30px auto;
+width:500px;
+}
+/*
+* Style by Rogie http://www.komodomedia.com/blog/2007/01/css-star-rating-redux/
+*/
+
+
+body{
+    padding: 50px;
+}
+
+.ajaxful-rating,
+.ajaxful-rating a:hover,
+.ajaxful-rating a:active,
+.ajaxful-rating a:focus,
+.ajaxful-rating .show-value{
+    background: url(/images/star.png) left -1000px repeat-x;
+}
+.ajaxful-rating{
+    position: relative;
+    width: 125px; 
+    height: 25px;
+    overflow: hidden;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-position: left top;
+}
+.ajaxful-rating li{ display: inline; }
+.ajaxful-rating a,
+.ajaxful-rating span,
+.ajaxful-rating .show-value{
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-indent: -1000em;
+    height: 25px;
+    line-height: 25px;
+    outline: none;
+    overflow: hidden;
+    border: none;
+}
+.ajaxful-rating a:hover,
+.ajaxful-rating a:active,
+.ajaxful-rating a:focus{
+    background-position: left bottom;
+}
+
+/* This section is generated dynamically.
+Just add a call to the helper method 'ajaxful_rating_style' within
+the head tags in your main layout */
+.ajaxful-rating .stars-1{
+width: 20%;
+z-index: 6;
+}
+.ajaxful-rating .stars-2{
+width: 40%;
+z-index: 5;
+}
+.ajaxful-rating .stars-3{
+width: 60%;
+z-index: 4;
+}
+.ajaxful-rating .stars-4{
+width: 80%;
+z-index: 3;
+}
+.ajaxful-rating .stars-5{
+width: 100%;
+z-index: 2;
+}
+
+.ajaxful-rating .show-value{
+    z-index: 1;
+    background-position: left center;
+}
+
+/* smaller star */
+.ajaxful-rating.small{
+    width: 50px; 
+    height: 10px;
+}
+.ajaxful-rating.small,
+.ajaxful-rating.small a:hover,
+.ajaxful-rating.small a:active,
+.ajaxful-rating.small a:focus,
+.ajaxful-rating.small .show-value{
+    background-image: url(/images/star_small.png);
+    line-height: 10px;
+    height: 10px;
+}
+/*
+#poster_continer {
+
+
+	padding:20px;
+
+}
+
+.poster {
+	display:inline-block;
+	margin :20px;
+	width:230px;
+	height:340px;
+	border:3px solid orange;
+}
+
+.poster:hover {
+	border:3px solid red;
+	background-color: blue;
+}
+
+.poster img  {
+	width:228px;
+	height:338px;
+	display:inline;
+
+}*/
+
+.poster {
+    
+    margin-top :100px;
+    margin-left: 50px;
+   
+}
+
+.imdb_button {
+    float:left;
+   
+}
+
+.details_button {
+    float:right;
+
+     left: 15px;
+
+}
+
+#user_nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 49px;
+    margin: 0 0 30px 0;
+    background-color: #303030;
+    border-bottom: solid 1px #111;
+    z-index: 400;
+    background-color: #2c2c2c;
+    background-image: -moz-linear-gradient(top, #333333, #222222);
+    background-image: -ms-linear-gradient(top, #333333, #222222);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#333333), to(#222222));
+    background-image: -webkit-linear-gradient(top, #333333, #222222);
+    background-image: -o-linear-gradient(top, #333333, #222222);
+    background-image: linear-gradient(top, #333333, #222222);
+    background-repeat: repeat-x;
+    width:auto;
+
+}
+
+
+
+.classname {
+    -moz-box-shadow:inset 0px 1px 0px 0px #803c36;
+    -webkit-box-shadow:inset 0px 1px 0px 0px #803c36;
+    box-shadow:inset 0px 1px 0px 0px #803c36;
+    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #7a221c), color-stop(1, #c62d1f) );
+    background:-moz-linear-gradient( center top, #7a221c 5%, #c62d1f 100% );
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#7a221c', endColorstr='#c62d1f');
+    background-color:#7a221c;
+    -moz-border-radius:6px;
+    -webkit-border-radius:6px;
+    border-radius:6px;
+    border:1px solid #99433d;
+    display:inline-block;
+    color:#ffffff;
+    font-family:arial;
+    font-size:15px;
+    font-weight:bold;
+    padding:6px 24px;
+    text-decoration:none;
+    text-shadow:1px 1px 0px #810e05;
+}.classname:hover {
+    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #c62d1f), color-stop(1, #7a221c) );
+    background:-moz-linear-gradient( center top, #c62d1f 5%, #7a221c 100% );
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#c62d1f', endColorstr='#7a221c');
+    background-color:#c62d1f;
+}.classname:active {
+    position:relative;
+    top:1px;
+}
+/* This imageless css button was generated by CSSButtonGenerator.com */
+
+
+.form {
+ 
+    width: 500px;
+    padding: 20px;
+    background: #f0f0f0;
+    overflow:auto;
+    margin-right: auto;
+    margin-left:auto;
+    margin-top:100px;
+ 
+    /* Border style */
+    border: 1px solid #cccccc;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    border-radius: 7px; 
+ 
+    /* Border Shadow */
+    -moz-box-shadow: 2px 2px 2px #cccccc;
+    -webkit-box-shadow: 2px 2px 2px #cccccc;
+    box-shadow: 2px 2px 2px #cccccc;
+ 
+    }
+
+
+   .form label {
+    font-family: Arial, Verdana;
+    text-shadow: 2px 2px 2px #ccc;
+    display: block;
+    float: left;
+    font-weight: bold;
+    margin-right:10px;
+    text-align: right;
+    width: 120px;
+    line-height: 25px;
+    font-size: 15px;
+    }
+
+    .form input{
+    font-family: Arial, Verdana;
+    font-size: 15px;
+    padding: 5px;
+    border: 1px solid #b9bdc1;
+    width: 300px;
+    color: #797979;
+    }
+
+    .form a {
+
+    float: right;
+    margin:10px 55px 10px 0;
+    font-weight: bold;
+    line-height: 1;
+    padding: 6px 10px;
+    cursor:pointer;
+    color: #fff;
+ 
+    text-align: center;
+    text-shadow: 0 -1px 1px #64799e;
+ 
+    /* Background gradient */
+    background: #a5b8da;
+    background: -moz-linear-gradient
+       (top, #a5b8da 0%, #7089b3 100%);
+    background: -webkit-gradient
+       (linear, 0% 0%, 0% 100%,
+       from(#a5b8da), to(#7089b3));
+ 
+    /* Border style */
+    border: 1px solid #5c6f91;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+ 
+    /* Box shadow */
+    -moz-box-shadow: inset 0 1px 0 0 #aec3e5;
+    -webkit-box-shadow: inset 0 1px 0 0 #aec3e5;
+    box-shadow: inset 0 1px 0 0 #aec3e5;
+ 
+    
+    }
+
+
+

@@ -1,0 +1,33 @@
+<h1><%= @movie.title %></h1> 
+<%= link_to image_tag("/images/" + @movie.poster.to_s.gsub(" 15:", " 18:") + " +0300.png"), movie_path(:id => @movie.id), :class=>'poster', :href => @movie.link, :rel => 'shadowbox', :title => @movie.title %>
+<div id="description_container">
+	<h2>Description</h2>
+	<%= @movie.description %>
+	<h2>Genres</h2>
+	<% @genres.each do |genre| %>
+		<%= genre.name %>
+	<% end %>
+	<h2>Director(s)</h2>
+	<% @actors.each do |actor| %>
+		<%= actor.name %>
+	<% end %>
+	<h2>Author(s)</h2>
+	<% @authors.each do |author| %>
+		<%= author.name %>
+	<% end %>
+	<h2>Actors</h2>
+	<% @actors.each do |actor| %>
+		<li><%= actor.name %></li>
+	<% end %>	
+</div>
+
+<div class="ratings" >
+<br>Movie Rating</br>
+<%= ratings_for @movie, :remote_options => {:url => rate_movie_path(@movie)}, :show_user_rating => true, :dimension => "subject"%>
+<br>Director Rating</br>
+<%= ratings_for @movie, :remote_options => {:url => rate_movie_path(@movie)}, :show_user_rating => true, :dimension => "director"%>
+<br>Author Rating</br>
+<%= ratings_for @movie, :remote_options => {:url => rate_movie_path(@movie)}, :show_user_rating => true, :dimension => "author"%>
+<br>Actor Rating</br>
+<%= ratings_for @movie, :remote_options => {:url => rate_movie_path(@movie)}, :show_user_rating => true, :dimension => "actor"%>
+</div>

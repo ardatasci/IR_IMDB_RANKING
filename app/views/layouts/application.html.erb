@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ImdbRanking</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= stylesheet_link_tag    "shadowbox", :media => "all" %>
+  <%= stylesheet_link_tag    "style_imdb", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "shadowbox" %>
+  <%= ajaxful_rating_style %>
+  <%= csrf_meta_tags %>
+  <script type="text/javascript">
+  	Shadowbox.init({
+  	});
+  </script>
+</head>
+<body onload="body_loded();" >
+	<div id="user_nav">
+	  <% if user_signed_in? %>
+	    Signed in as <%= current_user.email %>. Not you?
+	    <%= link_to "Sign out", destroy_user_session_path, :method => :delete, :class => 'classname' %>
+	    <%= link_to "Profile", profile_path,  :class => 'classname' %>
+      <%= link_to "Home", movies_path,  :class => 'classname' %>
+	  <% else %>
+	    <%= link_to "Sign up", new_user_registration_path,  :class => 'classname' %> or <%= link_to "sign in", new_user_session_path,  :class => 'classname' %>
+	  <% end %>
+	</div>
+<% if user_signed_in? %>
+  <div id="side_bar">
+               
+  </div>
+   <% end %>
+
+
+	<p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
+<div class="content" style="display:none;">
+<%= yield %>
+</div>
+</body>
+
+<script type="text/javascript">
+function body_loded(){
+  $('.content').show();
+}
+
+</script>
+</html>

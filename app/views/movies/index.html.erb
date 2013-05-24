@@ -1,0 +1,32 @@
+<h1>Movies</h1>
+
+    <div class="page_info">
+      <%= page_entries_info @movies %>
+    </div>
+
+    
+<div id="poster_container">
+<ul id="movieposters">
+<% @movies.each do |movie| %>
+	<li  class="poster"><%= link_to image_tag("/images/" + movie.poster.to_s.gsub(" 15:", " 18:") + " +0300.png", :onerror => "ImgError(this);"), movie_path(:id => movie.id),  :class=>'poster'%>
+	<div class="movieinfo">
+		<h3><%=movie.title%></h3>
+		<p><%=movie.description[0..100]%>...</p>
+		<%= link_to "On IMDB", movie_path(:id => movie.id), :class => "imdb_button", :href => movie.link, :rel => 'shadowbox[movies]', :title => movie.title %>
+		<%= link_to "Details", movie_path(:id => movie.id), :class => "details_button" %>
+							
+	</div>
+	</li>
+<% end %>
+</ul>
+
+<script type="text/javascript">
+function ImgError(element) {
+	element.src =   "/images/2013-05-21 18:28:17 +0300.png";
+	element.onerror = "";
+return true;
+}
+</script>
+<div class="apple_pagination">
+<%= will_paginate @movies, :container => false %>
+</div>

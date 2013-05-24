@@ -1,0 +1,2 @@
+$("#<%=dom_id%>").html('<%= ratings_for movie, :remote_options => {:url => rate_movie_path(movie)}, :show_user_rating => true, :dimension => dimension %>');
+

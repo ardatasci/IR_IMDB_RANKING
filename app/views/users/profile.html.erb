@@ -1,0 +1,34 @@
+<h1>User Profile</h1>
+
+<h2> Rated Movies </h2>
+<ul id="movieposters">
+<% @rated_movies.each do |movie| %>
+	<li  class="poster"><%= link_to image_tag("/images/" + movie.poster.to_s.gsub(" 15:", " 18:") + " +0300.png", :onerror => "ImgError(this);"), movie_path(:id => movie.id),  :class=>'poster'%>
+	<div class="movieinfo">
+		<h3><%=movie.title%></h3>
+		<p><%=movie.description[0..100]%>...</p>
+		<%= link_to "On IMDB", movie_path(:id => movie.id), :class => "imdb_button", :href => movie.link, :rel => 'shadowbox[movies]', :title => movie.title %>
+		<%= link_to "Details", movie_path(:id => movie.id), :class => "details_button" %>
+							
+	</div>
+	</li>
+<% end %>
+</ul>
+
+<div style="margin-top:400px; display:block;">
+<h2> Suggestions </h2>
+<ul id="movieposters">
+<% @suggestions.each do |movie| %>
+	<li  class="poster"><%= link_to image_tag("/images/" + movie.poster.to_s.gsub(" 15:", " 18:") + " +0300.png", :onerror => "ImgError(this);"), movie_path(:id => movie.id),  :class=>'poster'%>
+	<div class="movieinfo">
+		<h3><%=movie.title%></h3>
+		<p><%=movie.description[0..100]%>...</p>
+		<%= link_to "On IMDB", movie_path(:id => movie.id), :class => "imdb_button", :href => movie.link, :rel => 'shadowbox[movies]', :title => movie.title %>
+		<%= link_to "Details", movie_path(:id => movie.id), :class => "details_button" %>
+							
+	</div>
+	</li>
+<% end %>
+</ul>
+
+</div>
